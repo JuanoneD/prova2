@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images:{
@@ -12,6 +13,10 @@ const nextConfig = {
             {
                 source:"/segunda-rota",
                 destination:"/route-two"
+            },
+            {
+                source:"/terceira-rota",
+                destination:"/route-third"
             }
         ]
     }
