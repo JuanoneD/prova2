@@ -22,11 +22,11 @@ const RouteOne=()=>{
   },[])
   
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-wrap justify-center">
       {data.map((item)=>{
         return(
           <div key={item._id} className="p-1">
-            <div className="w-[300px] h-[400px] border-4">
+            <div className="border-4">
                 <div className="flex justify-center bg-gradient-to-r from-blue1 to-purple-500">
                     <Image src={item.imageUrl} alt="" width={300} height={300}></Image>
                 </div>
