@@ -24,7 +24,6 @@ const RouteTwo=()=>{
         api.get(`?name=${name}&page=${page}`).then((res)=>{
             setData(res.data.data)
             if(res.data.data.length===0){
-                console.log("AAAAAAAAAA")
                 setErr(true)
             }else{
                 setErr(false)
@@ -53,7 +52,7 @@ const RouteTwo=()=>{
             {err&&<p>Não encontrado!!</p>}
         <div className="flex flex-wrap justify-center">
         <Suspense fallback={<div>Loading..</div>}>
-        {data.map((item)=>{
+        {!err && data.map((item)=>{
           return(
             <div key={item._id} className="p-1">
               <div className="border-4">
