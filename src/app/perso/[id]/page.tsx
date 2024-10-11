@@ -21,9 +21,9 @@ const Perso = async({params:{id}}:IPerso)=>{
 
     return(
         <div className="flex justify-center">
-        <div className="border-4 w-2/3 p-8 mt-5">
+        <div className="border-4 w-2/3 p-2 mt-6 bg-cyan-400">
             <div className="flex justify-center">
-            <p className="flex items-center text-center p-1">
+            <p className="flex items-center text-center">
                     {item._id}
                 </p>
             </div>
@@ -31,11 +31,11 @@ const Perso = async({params:{id}}:IPerso)=>{
                 <Image src={item.imageUrl} alt="" width={800} height={800}></Image>
             </div>
             <div className="flex justify-center">
-                <p className="flex items-center text-center p-1 text-[32px]">
+                <p className="flex items-center text-center p-1 text-[42px]">
                     {item.name}
                 </p>
             </div>
-            <div>
+            <div className="text-[20px]">
                 <p>Filmes:</p>
                 {item.films.map((film:string)=>{
                     return(

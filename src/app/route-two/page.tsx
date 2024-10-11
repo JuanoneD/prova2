@@ -39,27 +39,27 @@ const RouteTwo=()=>{
 
     return(
         <>
-        <div className="flex flex-wrap justify-evenly p-2">
+        <div className="flex flex-wrap justify-evenly p-2 text-white mt-6">
             <div>
                 <label>Pagina:</label>
-                <input placeholder="1/149" value={page} onChange={(e)=>{setPage(e.target.value)}} className="border-2"/>
+                <input placeholder="1/149" value={page} onChange={(e)=>{setPage(e.target.value)}} className="ml-2 border-2 border-cyan-400 bg-black text-white"/>
             </div>
             <div>
                 <label>Nome:</label>
-                <input value={name} onChange={(e)=>{setName(e.target.value)}} className="border-2"/>
+                <input value={name} onChange={(e)=>{setName(e.target.value)}} className="ml-2 border-2 border-cyan-400 bg-black text-white"/>
             </div>
         </div>
             {err&&<p>Não encontrado!!</p>}
-        <div className="flex flex-wrap justify-center">
-        <Suspense fallback={<div>Loading..</div>}>
+        <div className="flex flex-wrap justify-center mt-4">
+        <Suspense fallback={<div className="text-white text-[50px]">Loading..</div>}>
         {!err && data.map((item)=>{
           return(
             <div key={item._id} className="p-1">
               <div className="border-4">
                   <div className="flex justify-center bg-gradient-to-r from-blue1 to-purple-500">
-                      <Image src={item.imageUrl} alt="" width={300} height={300}></Image>
+                    <Image className="object-cover h-64 w-64" src={item.imageUrl} alt="" width={300} height={300} priority={true}/>
                   </div>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center bg-cyan-400">
                       <p className="flex items-center text-center p-1">
                           {item.name}
                       </p>
